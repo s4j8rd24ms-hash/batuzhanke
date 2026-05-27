@@ -27,7 +27,7 @@
             overflow-x: hidden;
         }
 
-        /* БАСТЫ БЕТ: Фонда бірінші әдемі сурет тұрады */
+        /* 1. БЕТ: Басты экрандағы фондық постер (Жанеркенің суреті) */
         .poster-section {
             height: 100vh;
             display: flex;
@@ -38,7 +38,7 @@
             padding: 40px 20px;
             position: relative;
             background: linear-gradient(to bottom, rgba(12, 13, 20, 0.85) 15%, rgba(12, 13, 20, 0) 50%, rgba(12, 13, 20, 0.95) 85%), 
-                        url('IMG_5806.jpeg') no-repeat center center/cover;
+                        url('DD2DDA81-61F3-48D4-A255-A1B03B9AAF68.png') no-repeat center center/cover;
             border-bottom: 2px solid var(--accent-color);
         }
 
@@ -125,6 +125,16 @@
             text-justify: inter-word;
         }
 
+        /* 2. БЕТ: Шақыру хаттың ішінде тұратын екінші сурет */
+        .secondary-poster {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            margin-bottom: 35px;
+        }
+
         .details {
             border-top: 1px solid rgba(212, 175, 55, 0.2);
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
@@ -207,6 +217,8 @@
             <p class="invitation-text">
                 Сізді «Көз жасының патшайымы» (Queen of Tears) дорамасының таңғажайып эстетикасы мен жоғары корпоративтік мәнерінен шабыт алып дайындалған біздің жұптық жобамыздың тұсаукесеріне шақырамыз. Біздің үйлесімді жұмысымыз бен ізденісіміздің нәтижесіне куә болып, әділ бағаңызды беруіңіз — біз үшін үлкен мәртебе!
             </p>
+
+            <img src="IMG_5806.jpeg" onerror="this.src='IMG_5806.JPEG'; this.onerror=function(){this.src='IMG_5806.jpg'; this.onerror=function(){this.src='IMG_5806.png';}}" alt="Queen of Tears" class="secondary-poster">
 
             <div class="details">
                 <div class="detail-item">
