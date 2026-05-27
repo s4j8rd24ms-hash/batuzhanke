@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жұптық жұмысқа шақыру | Жанерке & Батухан</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0c0d14;
+            --text-color: #ffffff;
+            --accent-color: #d4af37;
+            --secondary-bg: #161b22;
+            --muted-text: #c5a880;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 1. БЕТ: Басты экрандағы Жанеркенің жүзі бар постер */
+        .poster-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            background: linear-gradient(to bottom, rgba(12, 13, 20, 0.85) 15%, rgba(12, 13, 20, 0) 50%, rgba(12, 13, 20, 0.95) 85%), 
+                        url('DD2DDA81-61F3-48D4-A255-A1B03B9AAF68.png') no-repeat center center/cover;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .drama-badge {
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            letter-spacing: 5px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+            margin-top: 20px;
+        }
+
+        .poster-titles {
+            margin-bottom: 30px;
+            background: rgba(12, 13, 20, 0.7);
+            padding: 20px 40px;
+            border-radius: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(8px);
+        }
+
+        .main-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 6px;
+            margin-bottom: 5px;
+            color: #ffffff;
+            text-shadow: 0px 0px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: var(--muted-text);
+        }
+
+        .scroll-hint {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            animation: bounce 2s infinite;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .content-section {
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(to bottom, #0c0d14, #12141c);
+        }
+
+        .invitation-card {
+            max-width: 650px;
+            width: 100%;
+            background: rgba(22, 27, 34, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            padding: 50px 40px;
+            text-align: center;
+            border-radius: 4px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+            margin-bottom: 50px;
+        }
+
+        .teacher-name {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+        }
+
+        .invitation-text {
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-bottom: 35px;
+            color: #e2e8f0;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* 2. БЕТ: Шақыру хаттың ішінде тұратын екінші сурет */
+        .secondary-poster {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            margin-bottom: 35px;
+        }
+
+        .details {
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 25px 0;
+            margin-bottom: 35px;
+        }
+
+        .detail-item { margin: 10px 0; }
+
+        .detail-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        .detail-value { font-size: 1.4rem; font-weight: 500; }
+
+        .countdown-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--muted-text);
+            margin-bottom: 20px;
+        }
+
+        .timer { display: flex; justify-content: center; gap: 25px; }
+
+        .time-box {
+            background: #0c0d14;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 15px 20px;
+            min-width: 85px;
+            border-radius: 4px;
+        }
+
+        .time-num { font-size: 1.8rem; font-weight: 600; color: var(--accent-color); }
+        .time-label { font-size: 0.75rem; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+            background-color: #0c0d14;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @media (max-width: 480px) {
+            .main-title { font-size: 2.2rem; }
+            .subtitle { font-size: 1rem; }
+            .invitation-card { padding: 35px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="poster-section">
+        <div class="drama-badge">눈물의 여왕 • Queen of Tears Special</div>
+        <div class="poster-titles">
+            <h1 class="main-title">ЖҰПТЫҚ ЖҰМЫС</h1>
+            <div class="subtitle">Жанерке & Батухан</div>
+        </div>
+        <div class="scroll-hint" onclick="document.getElementById('content').scrollIntoView({behavior: 'smooth'});">
+            Төмен айналдырыңыз ▼
+        </div>
+    </section>
+
+    <section class="content-section" id="content">
+        <div class="invitation-card">
+            <h2 class="teacher-name">Құрметті Балау апай!</h2>
+            <p class="invitation-text">
+                Сізді «Көз жасының патшайымы» (Queen of Tears) дорамасының таңғажайып эстетикасы мен жоғары корпоративтік мәнерінен шабыт алып дайындалған біздің жұптық жобамыздың тұсаукесеріне шақырамыз. Біздің үйлесімді жұмысымыз бен ізденісіміздің нәтижесіне куә болып, әділ бағаңызды берегуіңіз — біз үшін үлкен мәртебе!
+            </p>
+
+            <img src="IMG_5806.jpeg" alt="Queen of Tears" class="secondary-poster">
+
+            <div class="details">
+                <div class="detail-item">
+                    <div class="detail-label">Басталу уақыты</div>
+                    <div class="detail-value">28 мамыр, 21:00</div>
+                </div>
+            </div>
+
+            <div class="countdown-container">
+                <h3 class="countdown-title">Таныстырылым басталғанға дейін:</h3>
+                <div class="timer">
+                    <div class="time-box">
+                        <div class="time-num" id="days">00</div>
+                        <div class="time-label">Күн</div>
+                    </div>
+                    <div class="time-box">
+                        <div class="time-num" id="hours">00</div>
+                        <div class="time-label">Сағат</div>
+                    </div>
+                    <div class="time-box">
+                        <div class="time-num" id="minutes">00</div>
+                        <div class="time-label">Минут</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        &copy; 2026 Жұптық жұмыс таныстырылымы. Барлық құқықтар қорғалған.
+    </footer>
+
+    <script>
+        const countTo = new Date("May 28, 2026 21:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const diff = countTo - now;
+
+            if (diff < 0) {
+                document.querySelector('.countdown-container').innerHTML = "<h3 class='countdown-title' style='color: var(--accent-color);'>Таныстырылым уақыты келді!</h3>";
+                return;
+            }
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById('days').innerText = d < 10 ? '0' + d : d;
+            document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
+            document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
